@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1086701329303483558}
-  - component: {fileID: 8861543180527806511}
   - component: {fileID: 8146015934658337903}
+  - component: {fileID: 7875327214404714231}
   m_Layer: 0
   m_Name: Knife
   m_TagString: Untagged
@@ -33,20 +33,8 @@ Transform:
   - {fileID: 2605307670670568003}
   - {fileID: 6473734459747945670}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8861543180527806511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2284097049922823232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb332cb3accb9c148b80e208ff8de283, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8146015934658337903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,6 +47,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d77f44716f9f654e97f5171d1e0dd38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentAction: 0
+  ActionTimeLeft: 0
+  KnifeSprite: {fileID: 4874049268261468496}
+  WarningLine: {fileID: 3337920836204090321}
+  knifeRigidBody: {fileID: 7875327214404714231}
+  WanderingActionDuration: 5
+  TrackingActionDuration: 5
+  PrecutActionDuration: 0.5
+  CuttingActionDuration: 0.5
+  WanderingMinX: -5
+  WanderingMaxX: 5
+  WanderInterval: 0.75
+  WanderStartDelay: 1
+  knifeSpeedScale: 1
+  isTouchingPlayer: 0
+--- !u!50 &7875327214404714231
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2284097049922823232}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 10
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &3337920836204090321
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,7 +164,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b89e9bedc65fb5d4096df8db658fa883, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.77277094, g: 0.8301887, b: 0.19188325, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -200,7 +230,7 @@ GameObject:
   - component: {fileID: 6473734459747945670}
   - component: {fileID: 2998910501097210325}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: KnifeSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

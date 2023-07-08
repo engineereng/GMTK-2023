@@ -10,90 +10,131 @@ public class CuttingKnife : MonoBehaviour
     // blink and play warning sound?
     // then CUT and see if the player character got hit - if so, make them lose a heart or something
     // 
-    private Transform target;
-    private enum KnifeStates {
+    private Rigidbody2D target;
+    private enum KnifeActions {
         WANDERING = 0,
         TRACKING,
         PRECUT,
         CUTTING
     }
+
+    [Header("Knife actions")]
+    [SerializeField] private KnifeActions CurrentAction;
+    [SerializeField] private float ActionTimeLeft;
+
+    [Header("Object refs")]
+    [SerializeField] private GameObject KnifeSprite;
+    [SerializeField] private GameObject WarningLine;
     [SerializeField] private Rigidbody2D knifeRigidBody;
-    [SerializeField] private float currentActionTimeLeft;
-    [SerializeField] private float actionDelay;
     [Header("Action States Durations (seconds)")]
     [SerializeField] private float WanderingActionDuration;
     [SerializeField] private float TrackingActionDuration;
     [SerializeField] private float PrecutActionDuration;
     [SerializeField] private float CuttingActionDuration;
 
-    private KnifeStates KnifeCurrentState;
-    
-
+    [Header("Wandering physics")]
+    [SerializeField] private float WanderingMinX;
+    [SerializeField] private float WanderingMaxX;
+    [Range(0.5f, 2.0f)]
+    [SerializeField] private float WanderInterval;
+    [SerializeField] private float WanderStartDelay;
+    [Header("Tracking Physics constants")]
+    [SerializeField] private float knifeSpeedScale;
+    // [SerializeField] private float knifePunishSpeed;  
     // Start is called before the first frame update
+    [Header("Cutting constants")]
+    [SerializeField] private bool isTouchingPlayer;
+    int foo;
     void Start()
     {
-        target = PlayerMgr.Instance.Player.transform;
-        KnifeCurrentState = KnifeStates.WANDERING;
-        currentActionTimeLeft = WanderingActionDuration;
+        target = PlayerMgr.Instance.Player.GetComponent<Rigidbody2D>();        
+        CurrentAction = KnifeActions.WANDERING;
+        ActionTimeLeft = WanderingActionDuration;
+        Invoke(nameof(Wander), WanderStartDelay);
     }
 
     void Update()
     {
-        currentActionTimeLeft -= Time.deltaTime;
-        if (currentActionTimeLeft > 0)
+        ActionTimeLeft -= Time.deltaTime;
+        if (ActionTimeLeft > 0)
         {
-            // do something
+            if (CurrentAction.Equals(KnifeActions.CUTTING))
+            {
+                KnifeSlice();
+            }
             return;
         }
-        switch (KnifeCurrentState) {
-             case KnifeStates.WANDERING:
-                KnifeCurrentState = KnifeStates.TRACKING;
-                currentActionTimeLeft = TrackingActionDuration;
+        switch (CurrentAction) {
+             case KnifeActions.WANDERING:
+                 // scale knife back to 1 / default
+                CancelInvoke();
+                CurrentAction = KnifeActions.TRACKING;
+                ActionTimeLeft = TrackingActionDuration;
                 break;   
-            case KnifeStates.TRACKING:
-                KnifeCurrentState = KnifeStates.PRECUT;
-                currentActionTimeLeft = PrecutActionDuration;
+            case KnifeActions.TRACKING:
+                CurrentAction = KnifeActions.PRECUT;
+                ActionTimeLeft = PrecutActionDuration;
+                SpriteRenderer WarningLineSpriteRender = WarningLine.GetComponent<SpriteRenderer>();
+                SpriteRenderer KnifeSpriteSpriteRender = KnifeSprite.GetComponent<SpriteRenderer>();
+                WarningLineSpriteRender.color = Color.red;
+                KnifeSpriteSpriteRender.enabled = false;
                 break;
-            case KnifeStates.PRECUT:
+            case KnifeActions.PRECUT:
+                CancelInvoke();
                 // TODO warn the player that they about to be cut
-                KnifeCurrentState = KnifeStates.CUTTING;
-                currentActionTimeLeft = CuttingActionDuration;
+                CurrentAction = KnifeActions.CUTTING;
+                ActionTimeLeft = CuttingActionDuration;
+                WarningLineSpriteRender = WarningLine.GetComponent<SpriteRenderer>();
+                KnifeSpriteSpriteRender = KnifeSprite.GetComponent<SpriteRenderer>();
+                KnifeSpriteSpriteRender.enabled = true;
+                WarningLineSpriteRender.color = Color.black;
+                // scale the knife to x2 then back to x1
                 break;
-            case KnifeStates.CUTTING:
-                KnifeCurrentState = KnifeStates.WANDERING;
-                currentActionTimeLeft = WanderingActionDuration; 
+            case KnifeActions.CUTTING:
+                // scale knife to 0.9
+                CurrentAction = KnifeActions.WANDERING;
+                ActionTimeLeft = WanderingActionDuration; 
+                Invoke(nameof(Wander), WanderStartDelay);
                 break;
             default:
                 Debug.LogError("Knife's current state wasn't set properly!");
-                
                 break;
         }      
 
     }
 
-    void BeginWander()
+    void OnTriggerStay2D(Collider2D other)
     {
-        // TODO
+        if (other.transform.CompareTag("Player"));
+            isTouchingPlayer = true;
+            // 
     }
 
-    void BeginTracking()
+    void Wander()
     {
-        // TODO track the player loosely UNLESS they are moving too quickly
-        
+        Invoke(nameof(Wander), WanderInterval);
+        float randomPosition = Random.Range(WanderingMinX, WanderingMaxX);
+        knifeRigidBody.AddForce(new Vector2(((randomPosition - knifeRigidBody.position.x) * knifeSpeedScale / Time.deltaTime) - knifeRigidBody.velocity.x, 0));                
     }
 
-    void BeginPrecut()
+    bool KnifeSlice()
     {
-        // TODO
-    }
-
-    void BeginCutting()
-    {
-        // TODO
+        Debug.Log("cut: " + isTouchingPlayer);
+        return isTouchingPlayer;
     }
 
     void FixedUpdate()
     {
-        // for physics
+        switch (CurrentAction) {
+            case KnifeActions.TRACKING:
+                knifeRigidBody.AddForce(new Vector2(((target.position.x - knifeRigidBody.position.x) * knifeSpeedScale / Time.deltaTime) - knifeRigidBody.velocity.x, 0));
+                break;
+            case KnifeActions.PRECUT:
+                knifeRigidBody.velocity = Vector2.zero;
+                break;
+            default:
+                // Debug.LogError("Knife's current state wasn't set properly!");
+                break;
+        }
     }
 }
