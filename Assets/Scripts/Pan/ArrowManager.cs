@@ -3,28 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ArrowScript : MonoBehaviour
+public class ArrowManager : MonoBehaviour
 {
-    // public GameObject upArrow;
-    // public GameObject downArrow;
-    // public GameObject leftArrow;
-    // public GameObject rightArrow;
     public Arrow topArrow;
     public Arrow middleArrow;
     public Arrow bottomArrow;
-    public SpriteRenderer temp;
-    [SerializeField] private bool areArrowsFlipped;
+    public Arrow[] ArrowSlots;
     
+    public SpriteRenderer temp;
+    [Header("Gameplay timing")]
+    [SerializeField] private float TimeBetweenArrows;
+    [SerializeField] private float ShowingStartingDelay;
+    [SerializeField] private float PlayingStartingDelay;
+    [SerializeField] private bool areArrowsFlipped;
+
+    [Header("Arrow patterns")]
     public Pattern[] ArrowSequences;
     [SerializeField] private int PatternIndex;
     [SerializeField] private int ArrowInPatternIndex;
-    [SerializeField] private float ShowUpDelay;
-    private State state;
-    // SpriteRenderer upArrowShowUp;
-    // SpriteRenderer downArrowShowUp;
-    // SpriteRenderer leftArrowShowUp;
-    // SpriteRenderer rightArrowShowUp;
     [SerializeField] private ArrowType currentArrow;
+    [SerializeField] private float BeatsPerMinute;
+    [Header("State machine")]
+    private State state;    
     public enum State
     {
         SHOWING_PATTERN,
@@ -46,18 +46,14 @@ public class ArrowScript : MonoBehaviour
     void Start()
     {
         state = State.SHOWING_PATTERN;
-        InvokeRepeating(nameof(ShowPattern), ShowUpDelay, ShowUpDelay);
+        
+        // InvokeRepeating(nameof(ShowPattern), ShowUpDelay, ShowUpDelay);
+        // Invoke(nameof(ShowPattern), ShowingStartingDelay);
+        Invoke(nameof(ShowPattern), 4 * TimeBetweenArrows);
+        TimeBetweenArrows = 60.0f / BeatsPerMinute; // assuming 4/4 time
     }
+    
 
-    // void Start()
-    // {
-    //     // InvokeRepeating ("ChooseSequenceArrow", 2.0f, 1.0f); // increase in difficulties about speeding up
-    //     upArrowShowUp = upArrow.GetComponent<SpriteRenderer>();
-    //     downArrowShowUp = downArrow.GetComponent<SpriteRenderer>();
-    //     leftArrowShowUp = leftArrow.GetComponent<SpriteRenderer>();
-    //     rightArrowShowUp = rightArrow.GetComponent<SpriteRenderer>();
-
-    // }
    
     bool isCorrect = false;
 
@@ -111,40 +107,86 @@ public class ArrowScript : MonoBehaviour
 
     void ShowPattern()
     {
+        Debug.Log("Showing pattern!");
         Pattern currentPattern = ArrowSequences[PatternIndex];
         currentArrow = currentPattern.arrows[ArrowInPatternIndex];
-        switch (ArrowInPatternIndex) {
-            case 0:
-                topArrow.isArrowFlipped = areArrowsFlipped;
-                topArrow.ChangeArrow(currentArrow);
-                break;
-            case 1:
-                middleArrow.isArrowFlipped = areArrowsFlipped;
-                middleArrow.ChangeArrow(currentArrow);
-                break;
-            case 2:
-                bottomArrow.isArrowFlipped = areArrowsFlipped;
-                bottomArrow.ChangeArrow(currentArrow);
-                break;
-            default:
-                break;
-        }
-        ArrowInPatternIndex += 1;
-        // if (ArrowInPatternIndex >= currentPattern.arrows.Length)
-        // {
-        //     CancelInvoke();
-        //     ArrowInPatternIndex = 0;
-        //     InvokeRepeating(nameof(PlayPattern), ShowUpDelay, ShowUpDelay);
-        //     state = State.PLAYING_PATTERN;
+        Debug.Assert(ArrowInPatternIndex < ArrowSlots.Length);
+        // switch (ArrowInPatternIndex) {
+        //     case 0:
+        //         topArrow.isArrowFlipped = areArrowsFlipped;
+        //         topArrow.ChangeArrow(currentArrow);
+        //         break;
+        //     case 1:
+        //         middleArrow.isArrowFlipped = areArrowsFlipped;
+        //         middleArrow.ChangeArrow(currentArrow);
+        //         break;
+        //     case 2:
+        //         bottomArrow.isArrowFlipped = areArrowsFlipped;
+        //         bottomArrow.ChangeArrow(currentArrow);
+        //         break;
+        //     default:
+        //         break;
         // }
+        Arrow arrowDisplayTarget = ArrowSlots[ArrowInPatternIndex];
+        arrowDisplayTarget.isArrowFlipped = areArrowsFlipped;
+        arrowDisplayTarget.ChangeArrow(currentArrow);
+        ArrowInPatternIndex += 1;
+        if (IsCurrentPatternFinished())
+        {
+            state = State.PLAYING_PATTERN;
+            ArrowInPatternIndex = 0;
+            Invoke(nameof(PlayPattern), PlayingStartingDelay);
+        } else {
+            Invoke(nameof(ShowPattern), TimeBetweenArrows);
+        }
+    }
+
+    bool IsCurrentPatternFinished()
+    {
+        Pattern currentPattern = ArrowSequences[PatternIndex];
+        return ArrowInPatternIndex >= currentPattern.arrows.Length;
+    }
+
+    bool IsOutOfPatterns()
+    {
+        return PatternIndex >= ArrowSequences.GetLength(0);
     }
 
     void PlayPattern()
     {
-        
-        // ArrowInPatternIndex = 0;
-        // PatternIndex += 1;
+        Debug.Log("Playing pattern!");
+        // Play pattern
+        // TODO
+        ArrowInPatternIndex += 1;
+        if (IsCurrentPatternFinished())
+        {
+            if (IsOutOfPatterns())
+            {
+                Debug.Log("Game won!");
+                // TODO call win function
+            } else {
+                HideAllArrows();
+                PatternIndex += 1;
+                ArrowInPatternIndex = 0;
+                Invoke(nameof(ShowPattern), ShowingStartingDelay);
+            }
+        }
     }
+
+    // 150 bpm - 4/4
+    // time between beats - seconds
+    // 150 beats / minute * 1 minute / 60 seconds = 2.5 beats / second
+    
+    // 0.4 seconds between each beat
+
+    void HideAllArrows()
+    {
+        foreach (Arrow arrowSlot in ArrowSlots)
+        {
+            arrowSlot.ClearSlot();
+        }
+    }
+
     #region Name
         // void ChooseRandomArrow()
         // {
@@ -188,9 +230,12 @@ public class ArrowScript : MonoBehaviour
         //     rightArrowShowUp.enabled = false;
         // }
     #endregion
-
     void Update()
     { 
+        // if (PlayerMgr.Instance.FireIsBeingPressed)
+        //     {
+        //         Invoke(nameof(ShowPattern), 4 * TimeBetweenArrows);
+        //     }
         if (state.Equals(State.SHOWING_PATTERN))
         {
             
@@ -199,23 +244,23 @@ public class ArrowScript : MonoBehaviour
         {
             Vector2 moveAmount = PlayerMgr.Instance.MoveAmount;
 
-            switch(currentArrow) 
-            {
-                case ArrowType.UP:
-                    isCorrect = moveAmount == Vector2.up;
-                    break;
-                case ArrowType.DOWN:
-                    isCorrect = moveAmount == Vector2.down;
-                    break;
-                case ArrowType.LEFT:
-                    isCorrect = moveAmount == Vector2.left;
-                    break;
-                case ArrowType.RIGHT:
-                    isCorrect = moveAmount == Vector2.right;
-                    break;
-                default:
-                    break;
-            }
+            // switch(currentArrow) 
+            // {
+            //     case ArrowType.UP:
+            //         isCorrect = moveAmount == Vector2.up;
+            //         break;
+            //     case ArrowType.DOWN:
+            //         isCorrect = moveAmount == Vector2.down;
+            //         break;
+            //     case ArrowType.LEFT:
+            //         isCorrect = moveAmount == Vector2.left;
+            //         break;
+            //     case ArrowType.RIGHT:
+            //         isCorrect = moveAmount == Vector2.right;
+            //         break;
+            //     default:
+            //         break;
+            // }
 
             if (isCorrect)
             temp.color = Color.green;
