@@ -10,7 +10,9 @@ public class CuttingMinigameManager : Singleton<CuttingMinigameManager>
     [SerializeField] private UnityEvent OnLoseEvents;
     [SerializeField] private UnityEvent OnWinEvents;
     [SerializeField] private SpriteRenderer OverlayIntro;
-    [SerializeField] private SpriteRenderer DeathIntro;
+    [SerializeField] private SpriteRenderer DeathOverlay;
+    [SerializeField] private SpriteRenderer WinScreen;
+
     protected override void Awake()
     {
         base.Awake();
@@ -19,6 +21,8 @@ public class CuttingMinigameManager : Singleton<CuttingMinigameManager>
     {
         LivesCount = MaxLives;
         OverlayIntro.enabled = true;
+        DeathOverlay.enabled = false;
+        WinScreen.enabled = false;
         Invoke(nameof(RemoveOverlay), 1.0f);
     }
     void RemoveOverlay()
@@ -29,18 +33,24 @@ public class CuttingMinigameManager : Singleton<CuttingMinigameManager>
     public void GotHit()
     {
         LivesCount--;
-        if (LivesCount < 0)
+        if (LivesCount <= 0)
         {
             Die();
         }
     }
 
+    public void Win()
+    {
+        WinScreen.enabled = true;
+        GameMgr.Instance.waitAndLoadNextScene(1.0f);
+    }
+
     void Die()
     {
         // death animations?
-        Time.timeScale = 0;
         LettuceAnimatorMgr.Instance.Die();
         DogMoodManager.Instance.SetMood(DogMoodManager.DogMoods.Happy);
-        DeathIntro.enabled = true;
+        DeathOverlay.enabled = true;
+        GameMgr.Instance.lossAndWaitLoadScene(2.00f);
     }
 }
