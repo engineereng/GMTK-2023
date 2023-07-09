@@ -74,11 +74,11 @@ public class GameMgr : Singleton<GameMgr> {
     }
 
     public void waitAndLoadNextScene(float waitTime) {
-        StartCoroutine(waitSecondsThenLoadLossScene(waitTime));
+        StartCoroutine(waitSecondsThenLoad(waitTime));
     }
 
     public void lossAndWaitLoadScene(float waitTime){
-        StartCoroutine(waitSecondsThenLoad(waitTime));
+        StartCoroutine(waitSecondsThenLoadLossScene(waitTime));
     }
 
     IEnumerator waitSecondsThenLoad(float waitTime) {
