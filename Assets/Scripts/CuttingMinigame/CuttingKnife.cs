@@ -135,6 +135,7 @@ public class CuttingKnife : MonoBehaviour
             wasCutThisCycle = true;
             CuttingMinigameManager.Instance.GotHit();
             DogMoodManager.Instance.SetMoodTemporary(DogMoodManager.DogMoods.Happy);
+            LettuceAnimatorMgr.Instance.SetMoodTemporary(LettuceAnimatorMgr.LettuceMoods.Upset);
         } else if (!hasCut && !wasCutThisCycle) {
             AudioManager.instance.PlayOneShot(FMODEvents.instance.knifeMiss, this.transform.position);
             hasCut = true;
