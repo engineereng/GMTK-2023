@@ -162,11 +162,11 @@ MonoBehaviour:
     Path: event:/Ambiance/sizzling
   <music>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1522594667
+      Data2: 1081565972
+      Data3: -937222745
+      Data4: -1836653347
+    Path: event:/Music/GameMusic
   <knifeSlice>k__BackingField:
     Guid:
       Data1: -2132467166

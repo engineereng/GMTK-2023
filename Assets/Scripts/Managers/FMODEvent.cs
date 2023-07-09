@@ -9,8 +9,10 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference sizzling { get; private set; }
     [field: Header("Music")]
     [field: SerializeField] public EventReference music { get; private set; }
-    [field: Header("Knife SFX")]
+    [field: Header("Knife Kill")]
     [field: SerializeField] public EventReference knifeSlice { get; private set; }
+    [field: Header("Knife Miss")]
+    [field: SerializeField] public EventReference knifeMiss { get; private set; }
     [field: Header("Chips")]
     [field: SerializeField] public EventReference chips { get; private set; }
     [field: Header("Success")]
