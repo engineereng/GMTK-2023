@@ -345,11 +345,11 @@ MonoBehaviour:
     Path: event:/SFX/KnifeSlice
   <knifeMiss>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 95093127
+      Data2: 1341811770
+      Data3: -540609129
+      Data4: 1878716740
+    Path: event:/SFX/KnifeMiss
   <chips>k__BackingField:
     Guid:
       Data1: 1492279377
@@ -359,11 +359,11 @@ MonoBehaviour:
     Path: event:/SFX/Chips
   <doggo>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 842216063
+      Data2: 1192283035
+      Data3: 941542831
+      Data4: -787647703
+    Path: event:/SFX/Doggo
   <success>k__BackingField:
     Guid:
       Data1: -1263848365
