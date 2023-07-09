@@ -6,7 +6,7 @@ public class PanMinigameMgr : MonoBehaviour
 {
     public GameObject TutorialOverlay;
     public GameObject WinOverlay;
-    public GameObject DeathOverlay;
+    public GameObject[] DeathOverlays;
     [SerializeField] private PanSpriteController PanSpriteController;
 
     private ArrowManager ArrowManager;
@@ -52,7 +52,8 @@ public class PanMinigameMgr : MonoBehaviour
     void ShowTutorial()
     {
         WinOverlay.SetActive(false);
-        DeathOverlay.SetActive(false);
+        foreach(GameObject overlay in DeathOverlays)
+            overlay.SetActive(false);
         TutorialOverlay.SetActive(true);
     }
 
@@ -93,6 +94,8 @@ public class PanMinigameMgr : MonoBehaviour
 
     public void Lose()
     {
+        foreach(GameObject overlay in DeathOverlays)
+            overlay.SetActive(true);
         DogMoodManager.Instance.SetMood(DogMoodManager.DogMoods.Happy);
         GameMgr.Instance.lossAndWaitLoadScene(2.0f);
     }
