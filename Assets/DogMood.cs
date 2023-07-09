@@ -12,7 +12,8 @@ public class DogMoodManager : Singleton<DogMoodManager>
     {
         Annoyed,
         Angry,
-        Neutral
+        Neutral,
+        Happy
     }
 
     private SpriteRenderer spriteRenderer;
@@ -20,6 +21,7 @@ public class DogMoodManager : Singleton<DogMoodManager>
     public Sprite angrySprite;
     public Sprite annoyedSprite;
     public Sprite neutralSprite;
+    public Sprite happySprite;
     
     [SerializeField] private DogMoods currentMood;
 
@@ -35,6 +37,9 @@ public class DogMoodManager : Singleton<DogMoodManager>
                 break;
             case DogMoods.Neutral:
                 spriteRenderer.sprite = neutralSprite;
+                break;
+            case DogMoods.Happy:
+                spriteRenderer.sprite = happySprite;
                 break;
         }
     }
