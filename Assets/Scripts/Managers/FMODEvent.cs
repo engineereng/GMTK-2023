@@ -15,6 +15,8 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference knifeMiss { get; private set; }
     [field: Header("Chips")]
     [field: SerializeField] public EventReference chips { get; private set; }
+    [field: Header("Doggo")]
+    [field: SerializeField] public EventReference doggo { get; private set; }
     [field: Header("Success")]
     [field: SerializeField] public EventReference success { get; private set; }
     [field: Header("Failure")]

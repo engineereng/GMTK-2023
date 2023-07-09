@@ -1555,11 +1555,11 @@ MonoBehaviour:
     Path: 
   <music>k__BackingField:
     Guid:
-      Data1: 1522594667
-      Data2: 1081565972
-      Data3: -937222745
-      Data4: -1836653347
-    Path: event:/Music/GameMusic
+      Data1: 1985741506
+      Data2: 1288600893
+      Data3: -1851468100
+      Data4: -689219632
+    Path: event:/Music/MetalMusic
   <knifeSlice>k__BackingField:
     Guid:
       Data1: -2132467166
@@ -1575,6 +1575,13 @@ MonoBehaviour:
       Data4: 1878716740
     Path: event:/SFX/KnifeMiss
   <chips>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <doggo>k__BackingField:
     Guid:
       Data1: 0
       Data2: 0
