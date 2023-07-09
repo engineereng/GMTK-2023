@@ -155,39 +155,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <sizzling>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -807262673
+      Data2: 1233324346
+      Data3: -167744855
+      Data4: -1694898195
+    Path: event:/Ambiance/sizzling
   <music>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1522594667
+      Data2: 1081565972
+      Data3: -937222745
+      Data4: -1836653347
+    Path: event:/Music/GameMusic
   <knifeSlice>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -2132467166
+      Data2: 1191326214
+      Data3: 370928031
+      Data4: -1548067594
+    Path: event:/SFX/KnifeSlice
   <knifeMiss>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 95093127
+      Data2: 1341811770
+      Data3: -540609129
+      Data4: 1878716740
+    Path: event:/SFX/KnifeMiss
   <chips>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1492279377
+      Data2: 1187005459
+      Data3: -47244358
+      Data4: 894637661
+    Path: event:/SFX/Chips
   <doggo>k__BackingField:
     Guid:
       Data1: 842216063
@@ -197,18 +197,18 @@ MonoBehaviour:
     Path: event:/SFX/Doggo
   <success>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1263848365
+      Data2: 1180876087
+      Data3: -901511534
+      Data4: -620404420
+    Path: event:/SFX/Success
   <failure>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1617224901
+      Data2: 1245212544
+      Data3: -900322425
+      Data4: 1556876625
+    Path: event:/SFX/ChurchBell
 --- !u!114 &32810200
 MonoBehaviour:
   m_ObjectHideFlags: 0
