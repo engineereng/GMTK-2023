@@ -343,6 +343,13 @@ MonoBehaviour:
       Data3: 370928031
       Data4: -1548067594
     Path: event:/SFX/KnifeSlice
+  <knifeMiss>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   <chips>k__BackingField:
     Guid:
       Data1: 1492279377
@@ -350,6 +357,13 @@ MonoBehaviour:
       Data3: -47244358
       Data4: 894637661
     Path: event:/SFX/Chips
+  <doggo>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   <success>k__BackingField:
     Guid:
       Data1: -1263848365
@@ -1188,7 +1202,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cf60f4873d61e75449d4e924ef25b884, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f532a6eb6952b16478cfa5a68d294e6f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
