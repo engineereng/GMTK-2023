@@ -627,27 +627,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lettuce spritesheet_25
-      rect:
-        serializedVersion: 2
-        x: 824
-        y: 1828
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 16755f3c653515d4bbc57f20cf5e3d40
-      internalID: 1276432648
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: lettuce spritesheet_26
       rect:
         serializedVersion: 2
