@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class CuttingKnife : MonoBehaviour
 {
-    // goal: track the player "warning" mode
-    // like this: https://youtu.be/st-a0XKaVh4?t=858
-    // knife hovers with it?
-    // blink and play warning sound?
-    // then CUT and see if the player character got hit - if so, make them lose a heart or something
-    // 
     private Rigidbody2D target;
     private enum KnifeActions {
         WANDERING = 0,
@@ -47,8 +41,6 @@ public class CuttingKnife : MonoBehaviour
     [SerializeField] private float knifeAfterCutScale;
     [SerializeField] private float knifeDefaultScale;
     [SerializeField] private float knifePrecutScale;
-    // [SerializeField] private float knifePunishSpeed;  
-    // Start is called before the first frame update
     [Header("Cutting constants")]
     [SerializeField] private bool isTouchingPlayer;
     void Start()
@@ -64,29 +56,13 @@ public class CuttingKnife : MonoBehaviour
     /// </summary>
     void ScaleKnifeTo(float targetScale, float scaleSpeed)//, float time)
     {
-        // if (time < 0)
-        //     return;
         KnifeSprite.transform.localScale = Vector3.MoveTowards(KnifeSprite.transform.localScale, new (targetScale, targetScale, targetScale), scaleSpeed * Time.deltaTime);
-        // ScaleKnifeTo(targetScale, time - Time.deltaTime);
     }
     void Update()
     {
         ActionTimeLeft -= Time.deltaTime;
         if (ActionTimeLeft > 0)
         {
-            // switch (CurrentAction) {
-            //     case KnifeActions.WANDERING:
-            //         ScaleKnifeTo(knifeDefaultScale, precutScaleSpeed);
-            //         break;
-            //     case KnifeActions.PRECUT:
-            //         ScaleKnifeTo(knifePrecutScale, precutScaleSpeed);
-            //         break;
-            //     case KnifeActions.CUTTING:
-            //         ScaleKnifeTo(knifeCutScale, cuttingSpeedScale);
-            //         KnifeSlice();
-            //         break;
-                
-            // }
             return;
         }
         KnifeActions NextAction;

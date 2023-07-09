@@ -52,15 +52,21 @@ MonoBehaviour:
   KnifeSprite: {fileID: 4874049268261468496}
   WarningLine: {fileID: 3337920836204090321}
   knifeRigidBody: {fileID: 7875327214404714231}
-  WanderingActionDuration: 5
+  WanderingActionDuration: 0
   TrackingActionDuration: 5
   PrecutActionDuration: 0.5
   CuttingActionDuration: 0.5
-  WanderingMinX: -5
-  WanderingMaxX: 5
-  WanderInterval: 0.75
+  WanderingMinX: -8
+  WanderingMaxX: 8
+  WanderInterval: 0.5
   WanderStartDelay: 1
-  knifeSpeedScale: 1
+  WanderSpeed: 3
+  trackingSpeed: 0.5
+  precutScaleSpeed: 10
+  cuttingScaleSpeed: 10
+  knifeAfterCutScale: 0.8
+  knifeDefaultScale: 0.95
+  knifePrecutScale: 2
   isTouchingPlayer: 0
 --- !u!50 &7875327214404714231
 Rigidbody2D:
@@ -88,7 +94,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!1 &3337920836204090321
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,8 +251,8 @@ Transform:
   m_GameObject: {fileID: 4874049268261468496}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.95, y: 0.95, z: 0.95}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1086701329303483558}
   m_RootOrder: -1

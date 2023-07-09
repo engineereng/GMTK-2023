@@ -1251,15 +1251,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
       propertyPath: WanderSpeed
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
       propertyPath: WanderingMaxX
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
       propertyPath: WanderingMinX
-      value: -5
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
       propertyPath: maxScaleSpeed
@@ -1267,7 +1267,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
       propertyPath: trackingSpeed
-      value: 10
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
       propertyPath: WanderInterval
@@ -1319,7 +1319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
       propertyPath: WanderingActionDuration
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
