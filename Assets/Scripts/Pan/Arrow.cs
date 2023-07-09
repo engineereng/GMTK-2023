@@ -30,33 +30,33 @@ public class Arrow : MonoBehaviour
         leftArrowShowUp = leftArrow.GetComponent<SpriteRenderer>();
         rightArrowShowUp = rightArrow.GetComponent<SpriteRenderer>();
     }
-    public ArrowManager.ArrowType currentArrow;
+    public CallAndResponseArrowManager.ArrowType currentArrow;
 
-    public void ChangeArrow(ArrowManager.ArrowType newArrow)
+    public void ChangeArrow(CallAndResponseArrowManager.ArrowType newArrow)
     {
         currentArrow = newArrow;
         ClearSlot();
         switch(currentArrow) 
         {
-            case ArrowManager.ArrowType.UP:
+            case CallAndResponseArrowManager.ArrowType.UP:
                 if (isArrowFlipped)
                     downArrowShowUp.enabled = true;
                 else
                     upArrowShowUp.enabled = true;
                 break;
-            case ArrowManager.ArrowType.DOWN:
+            case CallAndResponseArrowManager.ArrowType.DOWN:
                 if (isArrowFlipped)
                     upArrowShowUp.enabled = true;
                 else
                     downArrowShowUp.enabled = true;
                 break;
-            case ArrowManager.ArrowType.LEFT:
+            case CallAndResponseArrowManager.ArrowType.LEFT:
                 if (isArrowFlipped)
                     rightArrowShowUp.enabled = true;
                 else
                     leftArrowShowUp.enabled = true;
                 break;
-            case ArrowManager.ArrowType.RIGHT:
+            case CallAndResponseArrowManager.ArrowType.RIGHT:
                 if (isArrowFlipped)
                     leftArrowShowUp.enabled = true;
                 else

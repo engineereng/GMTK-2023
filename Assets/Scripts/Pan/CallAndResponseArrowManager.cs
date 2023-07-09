@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ArrowManager : MonoBehaviour
+public class CallAndResponseArrowManager : MonoBehaviour
 {
-    public Arrow topArrow;
-    public Arrow middleArrow;
-    public Arrow bottomArrow;
     public Arrow[] ArrowSlots;
     
     public SpriteRenderer temp;
