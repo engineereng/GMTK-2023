@@ -123,6 +123,105 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &58326251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 58326254}
+  - component: {fileID: 58326253}
+  - component: {fileID: 58326252}
+  m_Layer: 0
+  m_Name: AudioMgr
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &58326252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58326251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2482459101cea11468e6a57f0d95536a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <sizzling>k__BackingField:
+    Guid:
+      Data1: -807262673
+      Data2: 1233324346
+      Data3: -167744855
+      Data4: -1694898195
+    Path: event:/Ambiance/sizzling
+  <music>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <knifeSlice>k__BackingField:
+    Guid:
+      Data1: -2132467166
+      Data2: 1191326214
+      Data3: 370928031
+      Data4: -1548067594
+    Path: event:/SFX/KnifeSlice
+  <chips>k__BackingField:
+    Guid:
+      Data1: 1492279377
+      Data2: 1187005459
+      Data3: -47244358
+      Data4: 894637661
+    Path: event:/SFX/Chips
+  <success>k__BackingField:
+    Guid:
+      Data1: -1263848365
+      Data2: 1180876087
+      Data3: -901511534
+      Data4: -620404420
+    Path: event:/SFX/Success
+  <failure>k__BackingField:
+    Guid:
+      Data1: -1895894667
+      Data2: 1282712770
+      Data3: 600611470
+      Data4: 447946337
+    Path: event:/SFX/Failure
+--- !u!114 &58326253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58326251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8bc3f5ae518e00498e0a6a69d21fb0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &58326254
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58326251}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 822.4391, y: 113.740875, z: -18.281328}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &153482770
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,8 +509,8 @@ GameObject:
   m_Component:
   - component: {fileID: 913333755}
   - component: {fileID: 913333754}
-  - component: {fileID: 913333753}
   - component: {fileID: 913333756}
+  - component: {fileID: 913333757}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -419,14 +518,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &913333753
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 913333752}
-  m_Enabled: 1
 --- !u!20 &913333754
 Camera:
   m_ObjectHideFlags: 0
@@ -537,6 +628,19 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &913333757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913333752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1 &1045585280
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,6 +717,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045585280}
   m_CullTransparentMesh: 1
+--- !u!1 &1139076866
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1139076868}
+  - component: {fileID: 1139076867}
+  m_Layer: 0
+  m_Name: GameMgr
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1139076867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139076866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80e210e1f6ac97c4ba266e578b16d2ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scenes:
+  - m_SceneAsset: {fileID: 102900000, guid: bd01332a359e08e4a8c47b6f4db1aa21, type: 3}
+    m_SceneName: MainMenu
+  - m_SceneAsset: {fileID: 102900000, guid: 1cd62546e0b982b49bee5cc12c7f2d42, type: 3}
+    m_SceneName: cutsceneFAKE
+  - m_SceneAsset: {fileID: 102900000, guid: cb84c4c1850d0d1479cd638de9520a6a, type: 3}
+    m_SceneName: PanFAKE
+  - m_SceneAsset: {fileID: 102900000, guid: 0720f78860011514fab998c0981973dd, type: 3}
+    m_SceneName: Cheese Game
+  - m_SceneAsset: {fileID: 102900000, guid: 0fcc5e6ac7c784f4497ce09fa65e7105, type: 3}
+    m_SceneName: lettuceFAKE
+  - m_SceneAsset: {fileID: 102900000, guid: bbab334471e4ab2409fc71a21a80eac9, type: 3}
+    m_SceneName: winFAKE
+  - m_SceneAsset: {fileID: 102900000, guid: 5b88e11a03437cd4482cfbadb539ce84, type: 3}
+    m_SceneName: creditsFAKE
+--- !u!4 &1139076868
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139076866}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.4275599, y: 0.46874905, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1579619794
 GameObject:
   m_ObjectHideFlags: 0
