@@ -126,7 +126,7 @@ public class CallAndResponseArrowManager : MonoBehaviour
         // }
         Arrow arrowDisplayTarget = ArrowSlots[ArrowInPatternIndex];
         arrowDisplayTarget.isArrowFlipped = areArrowsFlipped;
-        arrowDisplayTarget.ChangeArrow(currentArrow);
+        // arrowDisplayTarget.ChangeArrow(currentArrow);
         ArrowInPatternIndex += 1;
         if (IsCurrentPatternFinished())
         {
