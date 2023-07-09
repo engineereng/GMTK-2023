@@ -1217,6 +1217,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knife
       objectReference: {fileID: 0}
+    - target: {fileID: 6473734459747945670, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473734459747945670, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473734459747945670, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 6473734459747945670, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6622652256563752148, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
       propertyPath: m_Color.b
       value: 0.19188325
@@ -1229,6 +1245,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.77277094
       objectReference: {fileID: 0}
+    - target: {fileID: 7875327214404714231, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
+      propertyPath: m_Constraints
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
+      propertyPath: WanderSpeed
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
       propertyPath: WanderingMaxX
       value: 5
@@ -1238,8 +1262,16 @@ PrefabInstance:
       value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
+      propertyPath: maxScaleSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
+      propertyPath: trackingSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
       propertyPath: WanderInterval
-      value: 0.75
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
       propertyPath: knifeSpeedScale
@@ -1248,6 +1280,34 @@ PrefabInstance:
     - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
       propertyPath: WanderStartDelay
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
+      propertyPath: knifePrecutScale
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
+      propertyPath: precutScaleSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
+      propertyPath: precutSpeedScale
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
+      propertyPath: cuttingScaleSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
+      propertyPath: cuttingSpeedScale
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
+      propertyPath: knifeDefaultScale
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
+      propertyPath: knifeAfterCutScale
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
       propertyPath: PrecutActionDuration
