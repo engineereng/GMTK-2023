@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0d39360d53fb3be47a179619d3383e92
+guid: 0be75511aa727f545ad8079ad4741040
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,7 +121,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: pan fire spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 184
+        width: 723
+        height: 815
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ba6a403f52c8354a808f1136fd26f34
+      internalID: -1967670906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pan fire spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 193
+        width: 688
+        height: 779
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b35346ba872f084fb2c664b0e31247f
+      internalID: -82484626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pan fire spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 4717
+        y: 115
+        width: 754
+        height: 901
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff598c64186f2354bbefbf9ef22e4d74
+      internalID: -314240366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +195,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pan fire spritesheet_0: -1967670906
+      pan fire spritesheet_1: -82484626
+      pan fire spritesheet_2: -314240366
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

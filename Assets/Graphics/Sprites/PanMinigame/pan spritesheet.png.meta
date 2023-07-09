@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0be75511aa727f545ad8079ad4741040
+guid: 0d39360d53fb3be47a179619d3383e92
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,112 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: pan spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 22
+        width: 526
+        height: 933
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f19e35fccaf594640944fd2abcfff851
+      internalID: -2126471924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pan spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 22
+        width: 526
+        height: 933
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a806d9adaacb414b8cae7fc397b8a66
+      internalID: -1292974216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pan spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 2247
+        y: 22
+        width: 567
+        height: 933
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7a5b99f452425e4c84edc7fece1a2f0
+      internalID: -475190203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pan spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 3232
+        y: 22
+        width: 575
+        height: 933
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65ea289f704fc0645ae427b7c8c73577
+      internalID: 1225376684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pan spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 4235
+        y: 22
+        width: 551
+        height: 933
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ae35162ded85f94b953695306fe7d93
+      internalID: -562791278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +237,12 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pan spritesheet_0: -2126471924
+      pan spritesheet_1: -1292974216
+      pan spritesheet_2: -475190203
+      pan spritesheet_3: 1225376684
+      pan spritesheet_4: -562791278
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
