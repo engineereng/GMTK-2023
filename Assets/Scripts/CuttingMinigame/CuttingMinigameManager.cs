@@ -44,6 +44,8 @@ public class CuttingMinigameManager : Singleton<CuttingMinigameManager>
 
     public void Win()
     {
+        if (isGameOver)
+            return;
         isGameOver = true;
         if (!playedSound)
         {
@@ -56,6 +58,8 @@ public class CuttingMinigameManager : Singleton<CuttingMinigameManager>
 
     void Die()
     {
+        if (isGameOver)
+            return;
         isGameOver = true;
         AudioManager.instance.PlayOneShot(FMODEvents.instance.failure, this.transform.position);
         LettuceAnimatorMgr.Instance.Die();
