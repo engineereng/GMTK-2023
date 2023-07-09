@@ -43,6 +43,7 @@ public class CuttingKnife : MonoBehaviour
     [SerializeField] private float knifePrecutScale;
     [Header("Cutting constants")]
     [SerializeField] private bool isTouchingPlayer;
+    [SerializeField] private bool wasCutThisCycle;
     void Start()
     {
         target = PlayerMgr.Instance.Player.GetComponent<Rigidbody2D>();        
@@ -89,6 +90,7 @@ public class CuttingKnife : MonoBehaviour
                 break;
             case KnifeActions.CUTTING:
                 NextAction = KnifeActions.WANDERING;
+                wasCutThisCycle = false;
                 ActionTimeLeft = WanderingActionDuration; 
                 Invoke(nameof(Wander), WanderStartDelay);
                 break;
@@ -106,6 +108,12 @@ public class CuttingKnife : MonoBehaviour
             isTouchingPlayer = true;
     }
 
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.transform.CompareTag("Player"))
+            isTouchingPlayer = false;
+    }
+
     void Wander()
     {
         float randomPosition = Random.Range(WanderingMinX, WanderingMaxX);
@@ -117,22 +125,28 @@ public class CuttingKnife : MonoBehaviour
     bool KnifeSlice()
     {
         Debug.Log("cut: " + isTouchingPlayer);
+        
+        if (isTouchingPlayer && !wasCutThisCycle)
+        {
+            wasCutThisCycle = true;
+            CuttingMinigameManager.Instance.GotHit();
+        }
         return isTouchingPlayer;
     }
 
     void FixedUpdate()
     {
         switch (CurrentAction) {
-            case KnifeActions.WANDERING:
-                ScaleKnifeTo(knifeDefaultScale, precutScaleSpeed);
-                break;
+            // case KnifeActions.WANDERING:
+                
+            //     break;
             case KnifeActions.TRACKING:
+                ScaleKnifeTo(knifeDefaultScale, precutScaleSpeed);
                 knifeRigidBody.AddForce(new Vector2(((target.position.x - knifeRigidBody.position.x) * trackingSpeed / Time.deltaTime) - knifeRigidBody.velocity.x, 0));
                 break;
             case KnifeActions.PRECUT:
                 knifeRigidBody.velocity = Vector2.zero;
                 ScaleKnifeTo(knifePrecutScale, precutScaleSpeed);
-                KnifeSlice();
                 break;
             case KnifeActions.CUTTING:
                 ScaleKnifeTo(knifeAfterCutScale, cuttingScaleSpeed);

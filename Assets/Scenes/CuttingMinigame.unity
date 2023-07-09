@@ -1053,6 +1053,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1861148936}
+  - component: {fileID: 1861148937}
   m_Layer: 0
   m_Name: CuttingMinigameManager
   m_TagString: Untagged
@@ -1075,6 +1076,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1861148937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861148934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6266ed196e1d0ee48a588f21aa1f3ccf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LivesCount: 3
+  MaxLives: 3
+  OnLoseEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  OnWinEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2141076181
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,110 +1238,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knife
       objectReference: {fileID: 0}
-    - target: {fileID: 6473734459747945670, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 6473734459747945670, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 6473734459747945670, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 6473734459747945670, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6622652256563752148, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: m_Color.b
-      value: 0.19188325
-      objectReference: {fileID: 0}
-    - target: {fileID: 6622652256563752148, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: m_Color.g
-      value: 0.8301887
-      objectReference: {fileID: 0}
-    - target: {fileID: 6622652256563752148, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: m_Color.r
-      value: 0.77277094
-      objectReference: {fileID: 0}
-    - target: {fileID: 7875327214404714231, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: m_Constraints
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: WanderSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: WanderingMaxX
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: WanderingMinX
-      value: -8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: maxScaleSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: trackingSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: WanderInterval
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: knifeSpeedScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: WanderStartDelay
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: knifePrecutScale
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: precutScaleSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: precutSpeedScale
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: cuttingScaleSpeed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: cuttingSpeedScale
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: knifeDefaultScale
-      value: 0.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: knifeAfterCutScale
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: PrecutActionDuration
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: CuttingActionDuration
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8146015934658337903, guid: 8dc39df107ecc0e41880bb709e5ae4c0, type: 3}
-      propertyPath: WanderingActionDuration
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1334,6 +1251,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2343762414958042394, guid: 607600495fda165469f09962295ee0e0, type: 3}
+      propertyPath: padding
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3819082954180116432, guid: 607600495fda165469f09962295ee0e0, type: 3}
       propertyPath: m_RootOrder
       value: 7
