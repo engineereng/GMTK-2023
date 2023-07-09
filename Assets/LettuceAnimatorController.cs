@@ -5,6 +5,7 @@ using UnityEngine;
 public class LettuceAnimatorController : MonoBehaviour
 {
     private Rigidbody2D rigidbody2D;
+    
     public Animator AnimationController;
     [SerializeField] float animationSpeed;
     // Start is called before the first frame update

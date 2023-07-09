@@ -782,6 +782,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1239950515}
   - component: {fileID: 1239950514}
+  - component: {fileID: 1239950516}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Untagged
@@ -849,13 +850,29 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239950513}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.7113, y: -2.3267, z: 0}
+  m_LocalPosition: {x: 7.55, y: -1.24, z: 0}
   m_LocalScale: {x: 0.6891, y: 0.68909997, z: 0.6891}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1239950516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239950513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63663f993d677fd4eba32529ffa618b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angrySprite: {fileID: 2025339709, guid: 152a02a85580f0d40804635f5c8a3a31, type: 3}
+  annoyedSprite: {fileID: 597559465, guid: 152a02a85580f0d40804635f5c8a3a31, type: 3}
+  neutralSprite: {fileID: -1009243304, guid: 152a02a85580f0d40804635f5c8a3a31, type: 3}
+  currentMood: 0
 --- !u!1 &1354973979
 GameObject:
   m_ObjectHideFlags: 0

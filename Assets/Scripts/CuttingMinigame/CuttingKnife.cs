@@ -70,6 +70,7 @@ public class CuttingKnife : MonoBehaviour
         switch (CurrentAction) {
              case KnifeActions.WANDERING:
                 CancelInvoke();
+                DogMoodManager.Instance.SetMood(DogMoodManager.DogMoods.Neutral);
                 NextAction = KnifeActions.TRACKING;
                 ActionTimeLeft = TrackingActionDuration;
                 break;   
@@ -130,8 +131,16 @@ public class CuttingKnife : MonoBehaviour
         {
             wasCutThisCycle = true;
             CuttingMinigameManager.Instance.GotHit();
+            // DogMoodManager.Instance.SetMood(DogMoodManager.DogMoods.Happy);
+        } else {
+            Invoke(nameof(MakeDogAnnoyed), 0.1f);
         }
         return isTouchingPlayer;
+    }
+
+    void MakeDogAnnoyed()
+    {
+        DogMoodManager.Instance.SetMood(DogMoodManager.DogMoods.Annoyed);
     }
 
     void FixedUpdate()
