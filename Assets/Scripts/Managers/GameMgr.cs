@@ -74,7 +74,7 @@ public class GameMgr : Singleton<GameMgr> {
     }
 
     public void waitAndLoadNextScene(float waitTime) {
-        StartCoroutine(waitSecondsThenLoad(waitTime));
+        StartCoroutine(waitSecondsThenLoadLossScene(waitTime));
     }
 
     public void lossAndWaitLoadScene(float waitTime){
